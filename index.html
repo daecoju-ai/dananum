@@ -1,46 +1,99 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>다나눔렌탈 - 맞춤형 정수기 추천</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-    <style>
-        body {
-            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-            font-size: 18px;
-        }
-        .step-transition {
-            transition: all 0.3s ease-in-out;
-        }
-    </style>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#0056D2',
-              secondary: '#E8F0FE',
-              accent: '#FF6B00',
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>다나눔렌탈 - 맞춤형 정수기 추천</title>
+
+  <!-- Tailwind (개발/테스트용 CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Pretendard -->
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+  <style>
+    body {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+        "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      font-size: 18px;
+    }
+    .step-transition { transition: all 0.3s ease-in-out; }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0056D2',
+            secondary: '#E8F0FE',
+            accent: '#FF6B00',
           }
         }
       }
-    </script>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
+    }
+  </script>
+
+  <!-- Import Map (React를 ESM으로 사용) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@19.2.3",
+      "react-dom/client": "https://esm.sh/react-dom@19.2.3/client"
+    }
   }
-}
-</script>
+  </script>
 </head>
+
 <body class="bg-white text-gray-900">
-    <div id="root"></div>
+  <div id="root"></div>
+
+  <!-- ✅ 여기(렌더링 스크립트)가 없어서 지금 흰 화면이었던 것 -->
+  <script type="module">
+    import React from "react";
+    import { createRoot } from "react-dom/client";
+
+    function App() {
+      return (
+        React.createElement("div", { className: "min-h-screen bg-white" },
+          React.createElement("div", { className: "max-w-3xl mx-auto px-6 py-10" },
+
+            React.createElement("div", { className: "rounded-2xl border border-gray-200 p-6 shadow-sm" },
+              React.createElement("div", { className: "flex items-center justify-between gap-4" },
+                React.createElement("div", null,
+                  React.createElement("h1", { className: "text-2xl font-bold tracking-tight" }, "다나눔렌탈"),
+                  React.createElement("p", { className: "mt-1 text-gray-600" }, "맞춤형 정수기 추천 (배포 테스트 화면)")
+                ),
+                React.createElement("span", { className: "inline-flex items-center rounded-full bg-secondary px-3 py-1 text-sm font-medium text-primary" },
+                  "LIVE"
+                )
+              ),
+
+              React.createElement("div", { className: "mt-6 grid gap-3" },
+                React.createElement("div", { className: "rounded-xl bg-gray-50 p-4" },
+                  React.createElement("div", { className: "text-sm text-gray-500" }, "현재 상태"),
+                  React.createElement("div", { className: "mt-1 font-semibold" }, "흰 화면 문제 해결 완료 ✅")
+                ),
+
+                React.createElement("button", {
+                  className: "w-full rounded-xl bg-primary px-5 py-3 text-white font-semibold hover:opacity-90 active:opacity-80 step-transition",
+                  onClick: () => alert("버튼 동작 확인 ✅")
+                }, "시작하기")
+              ),
+
+              React.createElement("p", { className: "mt-4 text-sm text-gray-500" },
+                "이 화면이 보이면 React 렌더링이 정상입니다. 이제 설문/추천 로직을 붙이면 됩니다."
+              )
+            )
+          )
+        )
+      );
+    }
+
+    const el = document.getElementById("root");
+    createRoot(el).render(React.createElement(App));
+  </script>
 </body>
 </html>
