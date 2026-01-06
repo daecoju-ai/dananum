@@ -16,32 +16,14 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       font-size: 18px;
     }
-    .step-transition {
-      transition: all 0.3s ease-in-out;
-    }
+    .step-transition { transition: all 0.3s ease-in-out; }
   </style>
-
-  <!-- (선택) Tailwind CDN을 계속 쓸 거면 유지 가능 (경고는 뜸) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0056D2',
-            secondary: '#E8F0FE',
-            accent: '#FF6B00',
-          }
-        }
-      }
-    }
-  </script>
 </head>
 
 <body class="bg-white text-gray-900">
   <div id="root"></div>
 
-  <!-- ✅ Vite 엔트리(원래 코드) -->
+  <!-- ✅ 이것이 “원래대로” 실행되는 핵심 -->
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
