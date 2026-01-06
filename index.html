@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>다나눔렌탈 - 맞춤형 정수기 추천</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard -->
   <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 
   <style>
     body {
-      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-        "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+        "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       font-size: 18px;
     }
-    .step-transition { transition: all 0.3s ease-in-out; }
+    .step-transition {
+      transition: all 0.3s ease-in-out;
+    }
   </style>
 
+  <!-- (선택) Tailwind CDN을 계속 쓸 거면 유지 가능 (경고는 뜸) -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -31,23 +36,12 @@
       }
     }
   </script>
-
-  <!-- ✅ importmap은 "정확한 경로"로 쓰는 게 안전 -->
-  <script type="importmap">
-  {
-    "imports": {
-      "react": "https://esm.sh/react@19.2.3",
-      "react-dom/client": "https://esm.sh/react-dom@19.2.3/client",
-      "react-router-dom": "https://esm.sh/react-router-dom@7.11.0"
-    }
-  }
-  </script>
 </head>
 
 <body class="bg-white text-gray-900">
   <div id="root"></div>
 
-  <!-- ✅ 이 한 줄이 “원래 코드 살리는 핵심” -->
-  <script type="module" src="./app.js"></script>
+  <!-- ✅ Vite 엔트리(원래 코드) -->
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
